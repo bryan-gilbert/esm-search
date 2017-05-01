@@ -19,15 +19,15 @@ function directiveSearchInfoPanel(Authentication, CodeLists) {
 			var self = this;
 			self.authentication = Authentication;
 			self.documentTypes = CodeLists.documentTypes;
-			self.close = close;
+			self.close = closePanel;
 
 			$scope.$on('itemSelected', function (event, item) {
 				self.item = item;
 				self.doc = item.doc;
 			});
 			self.parent = $scope.parentController;
-			console.log('$scope.parentController', $scope.parentController)
-			function close() {
+
+			function closePanel() {
 				self.parent.toggleInfoPanel();
 			}
 		}
